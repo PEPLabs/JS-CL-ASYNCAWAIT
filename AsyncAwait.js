@@ -20,7 +20,7 @@ button.addEventListener("click", countdown);
  * was generated. Instead, you're going to need to navigate around this problem using async/await.
  * async is a keyword that is applied to functions, which would be added to the first like like this:
  *      
- *      sync function countdown() {
+ *      async function countdown() {
  * 
  * await is a keyword that is applied to a function call that returns a promise like this:
  *      let value = await getPromise();
