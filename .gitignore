@@ -31,3 +31,13 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Exa ###
+*chromedriver*
+*google-chrome-stable*
+*LATEST_RELEASE*
+driver/
+target/
+.idea/
+*.iml
+*.class
