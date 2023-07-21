@@ -10,41 +10,50 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumTest {
 
-    private WebDriver driver;
+    private WebDriver webDriver;
 
     @Before
     public void setUp() {
         // Set up ChromeDriver path
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
+
+        // Get file
+        File file = new File("AsyncAwait.html");
+        String path = "file://" + file.getAbsolutePath();
 
         // Create a new ChromeDriver instance
-        driver = new ChromeDriver();
-        File file = new File("AsyncAwait.html");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        webDriver = new ChromeDriver(options);
+
         // Open the HTML file
-        driver.get(file.getAbsolutePath());
+        webDriver.get(path);
     }
+
+
     @Test
     public void testInitialState() {
-        WebElement text = driver.findElement(By.id("text"));
+        WebElement text = webDriver.findElement(By.id("text"));
         assertEquals("click the button", text.getText());       
     }
 
     @Test
     public void testAsyncAwait() {
-        WebElement text = driver.findElement(By.id("text"));
+        WebElement text = webDriver.findElement(By.id("text"));
         assertEquals("click the button", text.getText());    
         
-        WebElement button = driver.findElement(By.id("button"));
+        WebElement button = webDriver.findElement(By.id("button"));
         // click the button
         button.click();
 
         // wait 10 seconds or until the text changes:
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
         // ensure that the new text is "Success!":
         wait.until(ExpectedConditions.textToBePresentInElement(text, "Success!"));
 
@@ -54,6 +63,6 @@ public class SeleniumTest {
     @After
     public void tearDown() {
         // Close the browser
-        driver.quit();
+        webDriver.quit();
     }
 }
