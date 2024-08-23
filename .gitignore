@@ -1,43 +1,14 @@
 HELP.md
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+/target/
+history_log.txt
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
 
-### Exa ###
-*chromedriver*
-*google-chrome-stable*
-*LATEST_RELEASE*
-driver/
-target/
-.idea/
-*.iml
-*.class
+### chromedriver and browser ###
+google-chrome-stable_current_amd64.deb
+microsoft-edge-stable_123.0.2420.97-1_amd64.deb
+LATEST_RELEASE
+LICENSE.chromedriver
+driver
