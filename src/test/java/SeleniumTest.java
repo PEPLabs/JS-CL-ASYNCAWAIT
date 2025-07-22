@@ -21,7 +21,7 @@ public class SeleniumTest {
     @Before
     public void setUp() {
         // Set up ChromeDriver path
-        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
 
         // Get file
         File file = new File("src/main/AsyncAwait.html");
