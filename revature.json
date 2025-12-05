@@ -1,0 +1,20 @@
+{
+  "type": "java",
+  "testFiles": [
+    {
+      "path": "src/test/java/SeleniumTest.java",
+      "testCases": [
+        {
+          "methodName": "testInitialState",
+          "label": "Displays initial async/await prompt",
+          "description": "Verifies that when the page first loads, the element with id 'text' contains the message 'click the button'."
+        },
+        {
+          "methodName": "testAsyncAwait",
+          "label": "Updates text after async/await completes",
+          "description": "Confirms the initial text is 'click the button', clicks the button with id 'button', then waits until the element with id 'text' updates to contain 'Success!' as a result of the async/await logic."
+        }
+      ]
+    }
+  ]
+}
